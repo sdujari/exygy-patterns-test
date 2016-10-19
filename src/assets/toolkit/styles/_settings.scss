@@ -69,6 +69,8 @@ $dark-gray: #8f8f8f;
 $black: #212121;
 $white: #ffffff;
 $teal:  #4ba1b6;
+$green: #00bd93;
+$orange: #f88e6a;
 $body-background: $light-gray;
 $body-font-color: $black;
 $body-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
@@ -104,6 +106,8 @@ $colors: (
   medium-gray:  $medium-gray,
   dark-gray:    $dark-gray,
   teal:         $teal,
+  green:        $green,
+  orange:       $orange
 );
 
 // 2. Breakpoints
