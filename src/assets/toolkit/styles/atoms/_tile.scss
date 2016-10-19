@@ -1,0 +1,67 @@
+// SVG Icons
+
+$tile-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.05);
+
+.tile {
+  background-color: $white;
+  border-radius: $global-radius;
+  padding: $global-padding;
+  box-shadow: $tile-shadow;
+  margin: $global-padding 0;
+
+  &.item, &.link {
+    padding: ($global-padding * 2) $global-padding;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background-color: $black;
+    vertical-align: middle;
+    display: block;
+
+    &.user {
+      border-radius: 50%;
+      margin-top: $global-padding;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .user {
+    color: $dark-gray;
+  }
+
+  .document {
+    font-size: $small-font-size;
+    margin-bottom: $global-padding;
+  }
+
+  .status {
+    font-weight: $font-weight-bold;
+
+    .date {
+      font-size: $tiny-font-size;
+      color: $dark-gray;
+      float: right;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .menu {
+    float: right;
+  }
+}
+
+.condensed .tile {
+  box-shadow: 0;
+  margin: 0;
+  border-radius: 0;
+  border-top: 1px solid $accent-gray;
+  padding: $global-padding;
+
+  &:first-child {
+    border-top: 0;
+  }
+}

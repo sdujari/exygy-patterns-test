@@ -1,13 +1,16 @@
 // Card
 
-$card-background: #fff !default;
+$card-background: $light-gray;
 $card-color: isitlight($card-background) !default;
 $card-border: 1px solid darken($card-background, 7%) !default;
 $card-radius: $global-radius !default;
-$card-shadow: 0 1px 2px rgba(#000, 0.2) !default;
+$card-shadow: 0 3px 13px 0 rgba(142, 142, 142, 0.17);
 $card-padding: $global-padding !default;
 $card-margin: 0.5rem !default;
-$card-divider-background: darken($card-background, 7%) !default;
+$card-header-background: $secondary;
+$card-max-height: 400px;
+$card-large-letter-spacing: 1.2px;
+$card-medium-letter-spacing: .9px;
 
 @mixin card-container(
   $background: $card-background,
@@ -37,25 +40,67 @@ $card-divider-background: darken($card-background, 7%) !default;
   img {
     width: 100%;
   }
+
+  &.condensed {
+    padding: 0;
+  }
 }
 
-@mixin card-divider($background: $card-divider-background,$padding: $card-padding) {
+@mixin card-header($background: $card-header-background,$padding: $card-padding) {
   background: $background;
   padding: $padding;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $white;
+  letter-spacing: $card-large-letter-spacing;
 }
 
-@mixin card-section($padding: $card-padding) {
+@mixin card-tiles($padding: $card-padding) {
   padding: $padding;
 }
 
 .card {
   @include card-container;
-}
 
-.card-divider {
-  @include card-divider;
-}
+  .card-header {
+    @include card-header;
 
-.card-section {
-  @include card-section;
+    .sort {
+      float: right;
+      letter-spacing: 0;
+      font-size: $small-font-size;
+      font-weight: $font-weight-semi;
+      letter-spacing: $card-medium-letter-spacing;
+
+      .filter {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &.success {
+      background-color: $success;
+    }
+
+    &.warning {
+      background-color: $warning;
+    }
+  }
+
+  .card-tiles {
+    @include card-tiles;
+    max-height: $card-max-height;
+    overflow: auto;
+
+    .tile-section {
+      letter-spacing: $card-medium-letter-spacing;
+      text-transform: uppercase;
+      font-size: $small-font-size;
+      color: $primary-accent;
+      font-weight: $font-weight-semi;
+    }
+  }
+
+  &.condensed .card-tiles {
+    padding: 0;
+  }
 }
